@@ -18,6 +18,7 @@
 
 expenses = []
 
+
 # load expenses from expenses.json file here
 # https://www.geeksforgeeks.org/read-write-and-parse-json-using-python/ (Python read JSON file)
 pass
@@ -25,7 +26,39 @@ pass
 while True:
     command = input("\nChoose command:")
     if command == "1":
+        izd_nos = str(input("Ievadiet izdevuma nosaukumu"))
+        izd_sum = str(input("Ievadiet izdevuma summu"))
+        izd_kat = str(input("Ievadiet izdevuma kategoriju"))
+        x = {
+        "nosaukums": izd_nos,
+        "summa": izd_sum,
+        "kategorija": izd_kat,
+        }
+        expenses.append(x)
         pass
+    if command == "2":
+        print(izd_nos, izd_sum, izd_kat)
+        pass
+    if command == "3":
+          def sorting(izd_liel):
+
+            return int(izd_liel["summa"])
+
+    expenses.sort(key = sorting, reverse = True)
+    
+    print(expenses[0:10])
+    pass
+    if command == "4":
+        def sorting(izd_maz):
+
+            return int(izd_maz["summa"])
+
+    expenses.sort(key = sorting)
+    
+    print(expenses[0:10])
+    pass
+if command == "5": 
+
     if command == "e":
         print("Exiting...")
         break
@@ -33,4 +66,3 @@ while True:
 # save expenses to expenses.json file here
 # https://www.geeksforgeeks.org/read-write-and-parse-json-using-python/ (Writing JSON to a file in Python)
 pass
-
